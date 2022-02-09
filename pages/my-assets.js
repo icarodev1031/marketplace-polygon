@@ -27,6 +27,7 @@ export default function MyAssets() {
 
         const marketContract = new ethers.Contract(nftmarketaddress, Market.abi, signer)
         const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider)
+        console.log(marketContract)
         const data = await marketContract.fetchMyNFTs()
 
         const items = await Promise.all(data.map(async i => {
